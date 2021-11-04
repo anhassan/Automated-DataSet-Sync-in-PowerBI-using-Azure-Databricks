@@ -32,7 +32,7 @@ def refresh_dataset(access_token,workspace_name,dataset_name):
   header = {'Authorization': f'Bearer {access_token}'}
   try :
       workspace_request_url = 'https://api.powerbi.com/v1.0/myorg/groups'
-      workspaces_request_response = json.loads(requests.get(url=request_url, headers=header).content)
+      workspaces_request_response = json.loads(requests.get(url=workspace_request_url, headers=header).content)
   except Exception as error :
       print("Request Error : ",error)
       return []
